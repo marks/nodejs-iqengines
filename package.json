@@ -1,0 +1,20 @@
+{
+  "name": "iqengines",
+  "description": "IQ Engines API Bindings",
+  "version": "0.0.1",
+  "homepage": "http://developer.iqengines.com/",
+  "repository": {
+    "url": "https://github.com/iqengines/nodejs-iqengines"
+  },
+  "author": "Huy Nguyen <huy@iqengines.com>",
+  "directories": {
+    "lib": "lib"
+  },
+  "main": "./lib/iqengines.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "engines": {
+    "node": "*"
+  }
+}

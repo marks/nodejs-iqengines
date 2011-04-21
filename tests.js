@@ -8,7 +8,7 @@ var api       =  new iqengines.Api();
 console.log('=> Sending sample query ..');
 qid = api.sendQuery(
     {
-        imgpath: './testdata/default.jpg',
+        img: './testdata/default.jpg',
         device_id:device_id
     }, 
     function (res) {

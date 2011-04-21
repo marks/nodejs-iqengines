@@ -13,6 +13,22 @@ You can install the module by using npm and running the command below.
 
 Or, you can also use this module by including it directly inside your project directory.
 
+# Example Usage #
+    
+    function onQuerySent (response) {
+        console.log("=> Query with qid=" + qid + " sent!");
+        console.log(JSON.stringify(response));
+    }
+
+    function onResultsReady (response) {
+        console.log("=> Results found! printing ..");
+        console.log(JSON.stringify(response));
+    }
+    
+    var iqengines = require('iqengines'),
+        api       = new iqengines.Api(<YOUR_KEY>, <YOUR_SECRET>),
+        qid       = api.sendQuery({img: 'sample.png'}, onQuerySent); 
+    api.waitResults({}, onResultsReady);
 
 # Api Reference #
 

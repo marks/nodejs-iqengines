@@ -29,13 +29,12 @@ Sends an image query to the iqengines servers. Returns a `qid` representing the 
 
 **Options:**
 
-|           option | description                                                                                                                                                                                                                  | default  |
-| ---------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-|              img | The file path to your image (jpg, png)                                                                                                                                                                                       | required |  
-| multiple_results | If true then all identified images are returned in the results                                                                                                                                                               | false    |
-|        device_id | A unique string used to filter out the results when retrieving results using the waitResult method                                                                                                                           | null     |
-|          webhook | The URL where the results are sent via HTTP POST once the results have been computed                                                                                                                                         | null     |
-|            extra | A string that is posted back when the webhook is called or when retreiving results. It is useful for passing JSON-encoded extra parameters about the query that your application can then use once the results are available | null     |
+- img - The file path to your image (jpg, png) (required)
+- multiple_results - If true then all identified images are returned in the results (default = null)
+- device_id - A unique string used to filter out the results when retrieving results using the waitResult method (default = null)
+- webhook - The URL where the results are sent via HTTP POST once the results have been computed (default = null)
+- extra - A string that is posted back when the webhook is called or when retreiving results. It is useful for passing JSON-encoded extra parameters about the query that your application can then use once the results are available (default = null)
+- json - If true, then the response sent to the callback is formatted as a JSON object (default = true)
     
 
 <br>
@@ -44,10 +43,8 @@ Sends an image query to the iqengines servers. Returns a `qid` representing the 
 
 Retrieves the result for a given query. *callback* is a function taking a single argument representing the response from the IQ Engines server. It is called when IQ Engines responds to the getResult request. *response* here will either contain the results of the query if it has been processed or a message specifying that query has not been processed yet.
 
-| option | description                                                                   | default  |
-| -----: | :---------------------------------------------------------------------------- | :------- |
-|    qid | The unique identifier returned from the *sendQuery* method                    | required |  
-|   json | If true, then the response sent to the callback is formatted as a JSON object | true     |  
+- qid - The unique identifier returned from the *sendQuery* method (default = true)
+- json - If true, then the response sent to the callback is formatted as a JSON object (default = true)
 
 
 
@@ -57,11 +54,8 @@ Retrieves the result for a given query. *callback* is a function taking a single
 
 Opens a long polling connection to the IQ Engines servers and waits until results are ready. *callback* is a function taking a single argument representing the response from the IQ Engines server. It is called when results are ready. 
 
-
-|    option | description                                                                                                               | default |
-| --------: | :------------------------------------------------------------------------------------------------------------------------ | :------ |
-| device_id | if given, the waitResult call will only return when results are ready from queries sent with the corresponding device\_id | null    |  
-|      json | If true, then the response sent to the callback is formatted as a JSON object                                             | true    |  
+- device_id - if given, the waitResult call will only return when results are ready from queries sent with the corresponding device\_id (default = null)
+- json - If true, then the response sent to the callback is formatted as a JSON object (default = true)
 
 [1]: http://nodejs.org/
 [2]: http://npmjs.org/

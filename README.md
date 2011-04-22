@@ -35,7 +35,7 @@ Or, you can also use this module by including it directly inside your project di
 <br>
 ### new Api(key, secret) ###
 
-A constructor that returns a handle to the iqengines API. `key` and `secret` is your API key/secret obtained from signing up for an account at [http://developer.iqengines.com/][3]. If these are left undefined, the module will look up their values from the `IQE_KEY` and `IQE_SECRET`;
+A constructor that returns a handle to the iqengines API. `key` and `secret` is your API key/secret obtained from signing up for an account at [http://developer.iqengines.com/][3]. If these are left undefined, the module will look up their values from the `IQE_KEY` and `IQE_SECRET` environment variables.
 
 <br>
 <br>

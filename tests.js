@@ -4,6 +4,8 @@ var assert    = require('assert');
 var device_id = (new Date()).toISOString();
 var api       =  new iqengines.Api();
 
+assert.ok(process.env.IQE_SECRET, "no IQE_SECRET found in environment");
+assert.ok(process.env.IQE_KEY, "no IQE_KEY found in environment");
 
 console.log('=> Sending sample query ..');
 qid = api.sendQuery(
